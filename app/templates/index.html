@@ -1,0 +1,49 @@
+<!-- app/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Floor Plan Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1>AI Floor Plan Generator</h1>
+        <p>Design your dream home effortlessly</p>
+    </div>
+    <div class="container">
+        <form action="/generate" method="post">
+            <div class="form-group">
+                <label for="plotSize">Plot Size:</label>
+                <select id="plotSize" name="plotSize" required>
+                    <option value="30x40">30x40 feet</option>
+                    <option value="40x60">40x60 feet</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bedrooms">Number of Bedrooms:</label>
+                <input type="number" id="bedrooms" name="bedrooms" required>
+            </div>
+            <div class="form-group">
+                <label for="bathrooms">Number of Bathrooms:</label>
+                <input type="number" id="bathrooms" name="bathrooms" required>
+            </div>
+            <div class="form-group">
+                <label for="kitchens">Number of Kitchens:</label>
+                <input type="number" id="kitchens" name="kitchens" required>
+            </div>
+            <div class="form-group">
+                <label for="additionalRooms">Additional Rooms:</label>
+                <input type="text" id="additionalRooms" name="additionalRooms" placeholder="e.g., Office, Gym">
+            </div>
+            <div class="form-group">
+                <label for="preferences">Optional Preferences (e.g., Vastu compliance):</label>
+                <textarea id="preferences" name="preferences" placeholder="Any special requirements?"></textarea>
+            </div>
+            <button type="submit"><i class="fas fa-drafting-compass"></i> Generate Floor Plan</button>
+        </form>
+    </div>
+</body>
+</html>
